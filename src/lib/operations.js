@@ -21,6 +21,13 @@ export const OPERATION_NAMES = {
   DIVIDE: "DIVIDE"
 };
 
+export const OPERATION_SYMBOLS = {
+  ADD: "+",
+  SUBTRACT: "-",
+  MULTIPLY: "*",
+  DIVIDE: "/"
+};
+
 export const FUNCTIONS = {
   ADD: add,
   SUBTRACT: subtract,
@@ -29,5 +36,5 @@ export const FUNCTIONS = {
 };
 
 export function isValidOperation(operation) {
-  return Object.keys(OPERATION_NAMES).includes(operation);
+  return Object.values(OPERATION_NAMES).includes(operation);
 }

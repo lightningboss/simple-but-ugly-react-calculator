@@ -2,11 +2,11 @@ import { OPERATION_NAMES, FUNCTIONS, isValidOperation } from "./operations";
 
 export default function calculate(input) {
   if (!isValidInput(input)) {
-    return "ERROR";
+    return ["ERROR"];
   }
 
   if (input.length === 1) {
-    return input[0];
+    return input;
   }
 
   const hasMultiplication = input.includes(OPERATION_NAMES.MULTIPLY);

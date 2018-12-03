@@ -1,10 +1,23 @@
 import { isValidOperation } from "./operations";
 
 // TODO add support for decimal numbers
+// TODO write tests
 
 export default function newArrayAfterOperation(input, operation) {
   const oldArray = input.slice(0, input.length - 1);
   const lastElement = input[input.length - 1];
+
+  if (!lastElement) {
+    if (isValidOperation(operation)) {
+      return [];
+    }
+
+    return [operation];
+  }
+
+  if (lastElement === "ERROR") {
+    return [operation];
+  }
 
   if (isValidOperation(operation)) {
     if (isValidOperation(lastElement)) {

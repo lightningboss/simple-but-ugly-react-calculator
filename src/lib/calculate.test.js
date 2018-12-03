@@ -14,21 +14,21 @@ const { ADD, SUBTRACT, MULTIPLY, DIVIDE } = OPERATION_NAMES;
 describe("calculate(input)", () => {
   it("returns the correct result", () => {
     const testArray = [100, ADD, 5, SUBTRACT, 2, MULTIPLY, 5];
-    expect(calculate(testArray)).toBe(95);
+    expect(calculate(testArray)).toEqual([95]);
   });
 
   it("returns the first element when input length is 1", () => {
     const testArray = [100];
-    expect(calculate(testArray)).toBe(100);
+    expect(calculate(testArray)).toEqual([100]);
   });
 
   it("returns 'ERROR' if input length is divisible by 2", () => {
     const testArray1 = [];
     const testArray2 = [100, ADD];
     const testArray3 = [100, ADD, 5, SUBTRACT];
-    expect(calculate(testArray1)).toBe("ERROR");
-    expect(calculate(testArray2)).toBe("ERROR");
-    expect(calculate(testArray3)).toBe("ERROR");
+    expect(calculate(testArray1)).toEqual(["ERROR"]);
+    expect(calculate(testArray2)).toEqual(["ERROR"]);
+    expect(calculate(testArray3)).toEqual(["ERROR"]);
   });
 });
 
