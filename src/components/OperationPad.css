@@ -1,0 +1,8 @@
+.operation-pad {
+  display: flex;
+  flex-direction: column;
+}
+
+.operation-pad .button {
+  font-size: 12px;
+}

@@ -1,0 +1,13 @@
+.result-display {
+  min-height: 200px;
+  font-size: 40px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-display h2 {
+  display: block;
+  margin: 0;
+}

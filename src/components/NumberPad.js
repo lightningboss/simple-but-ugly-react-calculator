@@ -1,17 +1,28 @@
 import React from "react";
+import OperationButton from "./OperationButton";
+
+import "./NumberPad.css";
 
 const NumberPad = ({ handleOperation }) => (
-  <div>
-    <button onClick={() => handleOperation(0)}>0</button>
-    <button onClick={() => handleOperation(1)}>1</button>
-    <button onClick={() => handleOperation(2)}>2</button>
-    <button onClick={() => handleOperation(3)}>3</button>
-    <button onClick={() => handleOperation(4)}>4</button>
-    <button onClick={() => handleOperation(5)}>5</button>
-    <button onClick={() => handleOperation(6)}>6</button>
-    <button onClick={() => handleOperation(7)}>7</button>
-    <button onClick={() => handleOperation(8)}>8</button>
-    <button onClick={() => handleOperation(9)}>9</button>
+  <div className="number-pad">
+    <div className="number-pad-row">
+      <OperationButton value={1} handleOperation={handleOperation} />
+      <OperationButton value={2} handleOperation={handleOperation} />
+      <OperationButton value={3} handleOperation={handleOperation} />
+    </div>
+    <div className="number-pad-row">
+      <OperationButton value={4} handleOperation={handleOperation} />
+      <OperationButton value={5} handleOperation={handleOperation} />
+      <OperationButton value={6} handleOperation={handleOperation} />
+    </div>
+    <div className="number-pad-row">
+      <OperationButton value={7} handleOperation={handleOperation} />
+      <OperationButton value={8} handleOperation={handleOperation} />
+      <OperationButton value={9} handleOperation={handleOperation} />
+    </div>
+    <div className="number-pad-row">
+      <OperationButton value={0} handleOperation={handleOperation} />
+    </div>
   </div>
 );
 

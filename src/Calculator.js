@@ -4,10 +4,11 @@ import { OPERATION_SYMBOLS, isValidOperation } from "./lib/operations";
 import newArrayAfterOperation from "./lib/newArrayAfterOperation";
 import calculate from "./lib/calculate";
 
-import Header from "./components/Header";
 import Display from "./components/Display";
 import NumberPad from "./components/NumberPad";
 import OperationPad from "./components/OperationPad";
+
+import "./Calculator.css";
 
 const defaultState = {
   operations: []
@@ -37,16 +38,17 @@ export default class Calculator extends Component {
       .join(" ");
 
     return (
-      <>
-        <Header />
+      <div className="calculator">
         <Display value={displayString} />
-        <OperationPad
-          handleOperation={this.handleOperation}
-          handleCalculateResult={this.handleCalculateResult}
-          handleReset={this.handleReset}
-        />
-        <NumberPad handleOperation={this.handleOperation} />
-      </>
+        <div className="operations-wrapper">
+          <NumberPad handleOperation={this.handleOperation} />
+          <OperationPad
+            handleOperation={this.handleOperation}
+            handleCalculateResult={this.handleCalculateResult}
+            handleReset={this.handleReset}
+          />
+        </div>
+      </div>
     );
   }
 }
