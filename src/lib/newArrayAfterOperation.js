@@ -4,7 +4,7 @@ import { isValidOperation } from "./operations";
 // TODO write tests
 
 export default function newArrayAfterOperation(input, operation) {
-  const oldArray = input.slice(0, input.length - 1);
+  const inputWithoutLastElement = input.slice(0, input.length - 1);
   const lastElement = input[input.length - 1];
 
   if (!lastElement) {
@@ -21,20 +21,20 @@ export default function newArrayAfterOperation(input, operation) {
 
   if (isValidOperation(operation)) {
     if (isValidOperation(lastElement)) {
-      return [...oldArray, operation];
+      return [...inputWithoutLastElement, operation];
     }
 
-    return [...oldArray, lastElement, operation];
+    return [...inputWithoutLastElement, lastElement, operation];
   }
 
   if (typeof operation === "number") {
     if (typeof lastElement === "number") {
       const newLastElement = lastElement * 10 + operation;
-      return [...oldArray, newLastElement];
+      return [...inputWithoutLastElement, newLastElement];
     }
 
     if (isValidOperation(lastElement)) {
-      return [...oldArray, lastElement, operation];
+      return [...inputWithoutLastElement, lastElement, operation];
     }
   }
 
