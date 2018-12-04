@@ -7,7 +7,7 @@ export default function newArrayAfterOperation(input, operation) {
   const inputWithoutLastElement = input.slice(0, input.length - 1);
   const lastElement = input[input.length - 1];
 
-  if (!lastElement) {
+  if (lastElement === undefined) {
     if (isValidOperation(operation)) {
       return [];
     }
